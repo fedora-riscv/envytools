@@ -1,8 +1,8 @@
-%global gitdate 20150812
+%global gitdate 20151030
 
 Name:           envytools
 Version:        0.0
-Release:        0.3.git%{gitdate}%{?dist}
+Release:        0.4.git%{gitdate}%{?dist}
 Summary:        Tools for people envious of nvidia's blob driver
 License:        MIT
 URL:            https://github.com/envytools/envytools
@@ -77,6 +77,9 @@ rm $RPM_BUILD_ROOT%{_docdir}/%{name}/hwdocs/*.py
 
 
 %changelog
+* Fri Oct 30 2015 Hans de Goede <hdegoede@redhat.com> - 0.0-0.4.git20151030
+- New 20151030 git snapshot
+
 * Wed Aug 12 2015 Hans de Goede <hdegoede@redhat.com> - 0.0-0.3.git20150812
 - New 20150812 git snapshot
 - Add demmio to packaged binaries
