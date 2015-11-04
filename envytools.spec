@@ -2,7 +2,7 @@
 
 Name:           envytools
 Version:        0.0
-Release:        0.4.git%{gitdate}%{?dist}
+Release:        0.5.git%{gitdate}%{?dist}
 Summary:        Tools for people envious of nvidia's blob driver
 License:        MIT
 URL:            https://github.com/envytools/envytools
@@ -78,7 +78,7 @@ rm $RPM_BUILD_ROOT%{_docdir}/%{name}/hwdocs/*.py
 
 
 %changelog
-* Wed Nov 04 2015 Than Ngo <than@redhat.com> - 0.0-0.4.git
+* Wed Nov 04 2015 Than Ngo <than@redhat.com> - 0.0-0.5.git
 - add exclusive arch to not build it on s390/powerpc, there's no libseccomp
   for these archs
 
