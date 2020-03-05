@@ -11,7 +11,7 @@ Source0:        envytools-%{gitdate}.tar.bz2
 Source1:        make-git-snapshot.sh
 Patch1:         envytools-20200304-fcommon-fix.patch
 ExclusiveArch: %{ix86} x86_64 %{arm} aarch64
-BuildRequires:  gcc
+BuildRequires:  gcc g++
 BuildRequires:  cmake flex bison
 BuildRequires:  libpciaccess-devel libX11-devel libXext-devel libseccomp-devel
 BuildRequires:  libxml2-devel libvdpau-devel libdrm-devel python3-devel
