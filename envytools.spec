@@ -2,7 +2,7 @@
 
 Name:           envytools
 Version:        0.0
-Release:        0.21.git%{gitdate}%{?dist}
+Release:        0.22.git%{gitdate}%{?dist}
 Summary:        Tools for people envious of nvidia's blob driver
 License:        MIT
 URL:            https://github.com/envytools/envytools
@@ -40,20 +40,6 @@ hardware supported by the nouveau driver project.
 
 
 %build
-# envytools has some LTO related issues, disable LTO for now:
-# /builddir/build/BUILD/envytools-20200810/hwtest/nv50_ptherm.cc:57:8: warning: type 'struct therm_threshold' violates the C++ One Definition Rule [-Wodr]
-#    57 | struct therm_threshold {
-#       |        ^
-# /builddir/build/BUILD/envytools-20200810/hwtest/nv84_ptherm.cc:193:8: note: a different type is defined in another translation unit
-#   193 | struct therm_threshold {
-#       |        ^
-# /builddir/build/BUILD/envytools-20200810/hwtest/nv50_ptherm.cc:60:11: note: the first difference of corresponding definitions is field 'thrs_mask'
-#    60 |  uint32_t thrs_mask;
-#       |           ^
-# /builddir/build/BUILD/envytools-20200810/hwtest/nv84_ptherm.cc:196:11: note: a field with different name is defined in another translation unit
-#   196 |  uint32_t hyst_addr;
-#       |           ^
-%define _lto_cflags %{nil}
 
 %cmake -DBUILD_SHARED_LIBS:BOOL=OFF
 %cmake_build
@@ -96,6 +82,9 @@ rm $RPM_BUILD_ROOT%{_docdir}/%{name}/hwdocs/*.py
 
 
 %changelog
+* Mon May 10 2021 Jeff Law <jlaw@tachyum.com> - 0.0-0.22.git20200810
+- Re-enable LTO
+
 * Tue Jan 26 2021 Fedora Release Engineering <releng@fedoraproject.org> - 0.0-0.21.git20200810
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
 
